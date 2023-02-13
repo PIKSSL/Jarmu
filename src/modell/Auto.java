@@ -16,16 +16,17 @@ public class Auto extends Jarmu {
     
     @Override
     public boolean halad(){
-        if(super.isBeinditva()){
-            int def = (int)(Math.random()*4)+1;
-            if (def == 1) {
-                defekt = true;
+        boolean halad = false;
+        if(this.isBeinditva()){
+            int def =(int)(Math.random()*4)+1;
+            if(def==1){
+                defekt=true;
             }
-            if(defekt || !super.isUzemanyag()){
-                return false;
+            if(!defekt || this.isUzemanyag()){
+                halad = true;
             }
         }
-    return true;
+    return halad;
     }
     
 }
